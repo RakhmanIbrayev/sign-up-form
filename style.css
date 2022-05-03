@@ -1,0 +1,17 @@
+@font-face {
+    font-family: nord;
+    src: url(fonts/Norse-Bold.otf);
+    font-display: swap;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: nord;
+}
+
+:root {
+    --low-white: #e0e0e0;
+    --dark-gray: #262626;
+    --error: #d90000;
+    --highlight: #005ad9;
+}
