@@ -6,12 +6,33 @@
 
 body {
     box-sizing: border-box;
-    font-family: nord;
+
 }
 
+/*colors and typography*/
 :root {
+    /*colors:*/
     --low-white: #e0e0e0;
     --dark-gray: #262626;
     --error: #d90000;
     --highlight: #005ad9;
+    /*font sizes:*/
+    --xl: 3rem;
+    --l: 1.5rem;
+    --m: 1rem;
+    --s: 0.875rem;
+}
+
+/*font sizes*/
+.heading {
+    font-size: var(--xl);
+}
+.sub-heading {
+    font-size: var(--l);
+}
+.paragraph {
+    font-size: var(--m);
+}
+.small {
+    font-size: var(--s);
 }
