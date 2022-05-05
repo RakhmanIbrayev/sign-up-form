@@ -7,19 +7,70 @@
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="flex">
     <div class="background">
-        <div class="logo-container">
+        <div class="logo-container flex centered">
             <img src="img/odin-lined.png" height="508" width="308" alt="The Odin Project logo">
-            <p>odin</p>
+            <p class="heading">odin</p>
         </div>
         <p class="credits">
             Photo by <a href="https://unsplash.com/@haliewestphoto" target="_blank">Halie West</a> on <a href="https://unsplash.com/" target="_blank">Unsplash</a>
         </p>
     </div>
 
-    <form action="/" method="post">
+    <form action="/" method="post" class="flex column centered">
+        <section class="form-text flex column">
+            <h1 class="sub-heading">
+                This is not a real online service! Lorem ipsum dolor sit amet consectetur,
+                adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Sign up <span class="italic">now</span> to get started.
+            </h1>
+            <h2 class="sub-heading">You <span class="italic">know</span> you want to.</h2>
+        </section>
+        <section class="form-form flex column">
+            <h3 class="form-heading sub-heading">
+                Let's do this!
+            </h3>
 
+            <div class="fields flex column">
+                <div class="row flex">
+                    <div class="input">
+                        <label for="firstname" class="small">first name</label>
+                        <input type="text" name="firstName" id="firstname" required>
+                    </div>
+                    <div class="input">
+                        <label for="lastname" class="small">last name</label>
+                        <input type="text" name="lastname" id="lastname" required>
+                    </div>
+                </div>
+                <div class="row flex">
+                    <div class="input">
+                        <label for="email" class="small">email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="input">
+                        <label for="phone" class="small">phone number</label>
+                        <input type="tel" name="phone" id="phone" required>
+                    </div>
+                </div>
+                <div class="row flex">
+                    <div class="input error">
+                        <label for="password" class="small">password</label>
+                        <input type="password" name="password" id="password" autocomplete="on" required>
+                    </div>
+                    <div class="input error">
+                        <label for="confirm-password" class="small">confirm password</label>
+                        <input type="password" name="password" id="confirm-password" autocomplete="on" required>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="submit flex column">
+            <button type="submit" class="create-account paragraph">Create Account</button>
+            <p class="already-user paragraph">
+                Already have an account? <a href="#">Log in</a>
+            </p>
+        </section>
     </form>
 </body>
 </html>

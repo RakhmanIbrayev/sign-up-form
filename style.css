@@ -4,9 +4,39 @@
     font-display: swap;
 }
 
+body, h1, h2, h3, p, button {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     box-sizing: border-box;
+    height: 100vh;
+}
 
+@media (max-width: 850px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.centered {
+    align-items: center;
+    justify-content: center;
 }
 
 /*colors and typography*/
@@ -19,20 +49,156 @@ body {
     /*font sizes:*/
     --xl: 3rem;
     --l: 1.5rem;
-    --m: 1rem;
+    --m: 1.1rem;
     --s: 0.875rem;
 }
 
 /*font sizes*/
 .heading {
     font-size: var(--xl);
+    font-family: nord;
+    color: var(--low-white);
 }
 .sub-heading {
     font-size: var(--l);
+    line-height: 1.3;
 }
 .paragraph {
     font-size: var(--m);
 }
 .small {
     font-size: var(--s);
+    text-transform: uppercase;
+}
+
+/*background image section*/
+.background {
+    position: relative;
+    flex-basis: 40%;
+    min-height: 30%;
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo-container {
+    position: relative; top: 20%;
+    padding-block: 1rem;
+    background-color: rgba(23, 23, 23, .7);
+}
+
+.logo-container img {
+    height: 100px;
+    width: 80px;
+}
+
+a {
+    color: var(--low-white);
+}
+
+a:visited {
+    color: var(--low-white);
+}
+
+.credits {
+    position: absolute;
+    text-align: center;
+    bottom: 5%; right: 50%;
+    transform: translateX(50%);
+    color: var(--low-white);
+}
+
+/*form*/
+.italic {
+    font-style: italic;
+}
+
+form {
+    flex-basis: 60%;
+    padding: 5rem;
+}
+
+.form-text, form, .form-form, .submit {
+    gap: 3rem;
+}
+
+.form-text {
+    align-self: flex-start;
+    max-width: 800px;
+}
+
+.form-form,
+.submit {
+    align-self: flex-start;
+}
+
+.row {
+    gap: 2rem;
+}
+
+@media (max-width: 650px) {
+    form {
+        padding: 2rem;
+    }
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+label {
+    display: block;
+}
+
+input {
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid var(--low-white);
+    border-radius: 5px;
+    padding: 0.4rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--highlight);
+    box-shadow: 2px 2px 3px var(--low-white);
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    color: var(--low-white);
+    background-color: darkolivegreen;
+    transition: all 0.3s;
+}
+
+button:hover, button:focus {
+    box-shadow: 1px 1px 5px var(--dark-gray);
+    cursor: pointer;
+}
+
+.create-account {
+    padding: 1rem;
+}
+
+.already-user a {
+    text-decoration: none;
+    color: darkolivegreen;
+}
+
+/*error state*/
+.error::after {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    content:  "* Passwords do not match";
+    display: block;
+    color: var(--error);
+}
+
+.error input {
+    border-color: var(--error);
 }
